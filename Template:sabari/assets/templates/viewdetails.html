@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<body>
+<h1 style="text-align:center">User Deatils</h1>
+<button type="button" style="margin-left:200px"> <a href="{% url 'admin_bookdetails' %}">View Book Details</a>  </button>
+<table style="margin-left:500px;padding:5px">
+    <tr>
+        <th> First Name</th>
+        <th>Last Name</th>
+        <th>User Name</th>
+        <th>E-mail</th>
+        <th>Mobile Number</th>
+    </tr>
+    {% for a in object %}
+    <tr>
+        <td>{{a.firstname}}</td>
+        <td>{{a.lastname}}</td>
+        <td>{{a.userid}}</td>
+        <td>{{a.mblenum}}</td>
+        <td>{{a.email}}</td>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>
